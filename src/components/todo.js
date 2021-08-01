@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 
-const Todo = ({ todos, completeTodo, updateTodo }) => {
+const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   const [edit, setEdit] = useState({
     id: null,
     value: ''
@@ -28,6 +28,9 @@ const Todo = ({ todos, completeTodo, updateTodo }) => {
         {todo.text}
       </div>
       <div className='icons'>
+      <button
+          onClick={() => removeTodo(todo.id)}
+          className='delete-icon'>Eliminar</button>
         <button
           onClick={() => setEdit({ id: todo.id, value: todo.text })}
           className='edit-icon'>Cambiar</button>
