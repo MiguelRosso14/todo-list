@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import TodoForm from './TodoForm';
-import { TiEdit } from 'react-icons/ti';
 
 const Todo = ({ todos, completeTodo, updateTodo }) => {
   const [edit, setEdit] = useState({
@@ -29,10 +28,9 @@ const Todo = ({ todos, completeTodo, updateTodo }) => {
         {todo.text}
       </div>
       <div className='icons'>
-        <TiEdit
+        <button
           onClick={() => setEdit({ id: todo.id, value: todo.text })}
-          className='edit-icon'
-        />
+          className='edit-icon'>Cambiar</button>
       </div>
     </div>
   ));
